@@ -1,10 +1,10 @@
 [
 {
 	"uri": "/vi/",
-	"title": "START WITH AMAZON AWS VPN SITE-TO-SITE AND PRIVATELINK",
+	"title": "PrivateLink",
 	"tags": [],
 	"description": "",
-	"content": "START WITH AMAZON AWS VPN SITE-TO-SITE AND PRIVATELINK Overall Trong bài lab này, chúng ta thực hành về AWS Site-to-Site và PrivateLink Nội dung Giới thiệu Các bước chuẩn bị Tạo máy chủ EC2 Cấu hình VPN Site to Site Cấu hình PrivateLink Kết quả Dọn dẹp tài nguyên "
+	"content": "Truy cập dịch vụ chia sẻ trên Service Provider từ On-Premise sử dụng PrivateLink và VPN Site to Site Tổng quan Trong bài lab này, chúng ta thực hành về AWS Site-to-Site và PrivateLink Nội dung Giới thiệu Các bước chuẩn bị Tạo máy chủ EC2 Cấu hình VPN Site to Site Cấu hình PrivateLink Kết quả Dọn dẹp tài nguyên "
 },
 {
 	"uri": "/vi/1-introduce/",
