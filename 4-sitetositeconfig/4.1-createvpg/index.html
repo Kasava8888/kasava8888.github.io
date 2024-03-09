@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.123.7">
@@ -12,21 +12,21 @@
     <title>Create Virtual Private Gateway :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1709996107" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1709996107" rel="stylesheet">
-    <link href="/css/hybrid.css?1709996107" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1709996107" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1709996107" rel="stylesheet">
-    <link href="/css/auto-complete.css?1709996107" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1709996107" rel="stylesheet">
-    <link href="/css/theme.css?1709996107" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1709996107" rel="stylesheet">
+    <link href="/css/nucleus.css?1710026342" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1710026342" rel="stylesheet">
+    <link href="/css/hybrid.css?1710026342" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1710026342" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1710026342" rel="stylesheet">
+    <link href="/css/auto-complete.css?1710026342" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1710026342" rel="stylesheet">
+    <link href="/css/theme.css?1710026342" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1710026342" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1709996107" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1710026342" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1709996107"></script>
+    <script src="/js/jquery-3.3.1.min.js?1710026342"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1709996107"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1709996107"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1710026342"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1710026342"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/";
+        var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1709996107"></script>
+<script type="text/javascript" src="/js/search.js?1710026342"></script>
 
     
   </div>
@@ -787,7 +787,7 @@
                   
                     
                     
-                      <option id="en" value="/4-sitetositeconfig/4.1-createvpg/" selected>English</option>
+                      <option id="en" value="//localhost:1313/4-sitetositeconfig/4.1-createvpg/" selected>English</option>
                     
                   
               
@@ -801,7 +801,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/4-sitetositeconfig/4.1-createvpg/">Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/4-sitetositeconfig/4.1-createvpg/">Tiếng Việt</option>
                     
                   
               
@@ -908,11 +908,7 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
+    <li><a href="#create-virtual-private-gateway">Create Virtual Private Gateway</a></li>
   </ul>
 </nav>
     </div>
@@ -938,34 +934,44 @@
 
 
 
-	<p>For our EC2 instances to be able to send session logs to the S3 bucket, we will need to update the IAM Role assigned to the EC2 instance by adding a policy that allows access to S3.</p>
-<h4 id="update-iam-role">Update IAM Role</h4>
+	<h2 id="create-virtual-private-gateway">Create Virtual Private Gateway</h2>
 <ol>
-<li>Go to <a href="https://console.aws.amazon.com/iamv2/home?#/home">IAM service management console</a></li>
+<li>Access to <strong>VPC</strong></li>
 </ol>
 <ul>
-<li>Click <strong>Roles</strong>.</li>
-<li>In the search box, enter <strong>SSM</strong>.</li>
-<li>Click on the <strong>SSM-Role</strong> role.</li>
+<li>Select <strong>Virtual Private Gateway</strong></li>
+<li>Select <strong>Create Virtual Private Gateway</strong>
+<img alt="vpn" src="/images/4.vpn/4.1.1.png"></li>
 </ul>
-<p><img alt="S3" src="/images/4.s3/002-s3.png"></p>
 <ol start="2">
-<li>Click <strong>Attach policies</strong>.</li>
-</ol>
-<p><img alt="S3" src="/images/4.s3/003-s3.png"></p>
-<ol start="3">
-<li>In the Search box enter <strong>S3</strong>.</li>
+<li>In the Create Virtual Private Gateway interface</li>
 </ol>
 <ul>
-<li>Click the policy <strong>AmazonS3FullAccess</strong>.</li>
-<li>Click <strong>Attach policy</strong>.</li>
+<li><strong>Name tag</strong>, enter <code>VPG</code></li>
+<li>Select <strong>Amazon default ASN</strong></li>
+<li>Select <strong>Create virtual private gateway</strong>
+<img alt="vpn" src="/images/4.vpn/4.1.2.png"></li>
 </ul>
-<p><img alt="S3" src="/images/4.s3/004-s3.png"></p>
-
-<div class="notices tip" ><p>In the production environment, we will grant stricter permissions to the specified S3 bucket. In the framework of this lab, we use the policy <strong>AmazonS3FullAccess</strong> for convenience.</p>
-</div>
-
-<p>Next, we will proceed to create an S3 bucket to store session logs.</p>
+<ol start="3">
+<li>We need to perform Attach to VPC</li>
+</ol>
+<ul>
+<li>Select <strong>Actions</strong></li>
+<li>Select <strong>Attach to VPC</strong>
+<img alt="vpn" src="/images/4.vpn/4.1.3.png"></li>
+</ul>
+<ol start="4">
+<li>In the <strong>Attach to VPC</strong> interface</li>
+</ol>
+<ul>
+<li>Select <strong>Consumer</strong> VPC.</li>
+<li>Select <strong>Attach to VPC</strong>
+<img alt="vpn" src="/images/4.vpn/4.1.4.png"></li>
+</ul>
+<ol start="5">
+<li>Complete and see <strong>State</strong> as <strong>Attached</strong>
+<img alt="vpn" src="/images/4.vpn/4.1.5.png"></li>
+</ol>
 
 
 
@@ -1407,19 +1413,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1709996107"></script>
-    <script src="/js/perfect-scrollbar.min.js?1709996107"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1709996107"></script>
-    <script src="/js/jquery.sticky.js?1709996107"></script>
-    <script src="/js/featherlight.min.js?1709996107"></script>
-    <script src="/js/highlight.pack.js?1709996107"></script>
+    <script src="/js/clipboard.min.js?1710026342"></script>
+    <script src="/js/perfect-scrollbar.min.js?1710026342"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1710026342"></script>
+    <script src="/js/jquery.sticky.js?1710026342"></script>
+    <script src="/js/featherlight.min.js?1710026342"></script>
+    <script src="/js/highlight.pack.js?1710026342"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1709996107"></script>
-    <script src="/js/learn.js?1709996107"></script>
-    <script src="/js/hugo-learn.js?1709996107"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1710026342"></script>
+    <script src="/js/learn.js?1710026342"></script>
+    <script src="/js/hugo-learn.js?1710026342"></script>
 
-    <link href="/mermaid/mermaid.css?1709996107" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1709996107"></script>
+    <link href="/mermaid/mermaid.css?1710026342" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1710026342"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
